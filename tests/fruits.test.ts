@@ -31,7 +31,7 @@ describe("testes POST/fruits", () => {
 
 describe("tests GET/fruits/:id", () => {
     it(`shoud return 404 when trying to get a fruit by an id that doesn't exist`, async () => {
-        const response = await api.get('/fruit/1');
+        const response = await api.get(`/fruit/${Number.MAX_VALUE}`);
         expect(response.status).toBe(httpStatus.NOT_FOUND);
     })
 
